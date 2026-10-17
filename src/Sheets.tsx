@@ -1,3 +1,4 @@
+import {DocumentLoading} from '@prisma/core/DocumentLoading';
 import {useLocalAutosave} from '@prisma/core/useLocalAutosave';
 import {TemplateGallery} from '@prisma/core/TemplateGallery';
 import {createSheetTemplate} from './sheet-templates';
@@ -1698,9 +1699,7 @@ export default function Sheets() {
         </div>
       )}
       {busy && (
-        <div className="sheets-busy" role="status">
-          Procesando el archivo en este dispositivo…
-        </div>
+        <DocumentLoading overlay label="Procesando el archivo…"/>
       )}
     </div>
   );
